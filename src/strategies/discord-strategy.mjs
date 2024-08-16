@@ -44,7 +44,7 @@ passport.use(
         if (!findUser) {
           const newUser = new DiscordUser({
             username: profile.username,
-            discordId: profile.discordId,
+            discordId: profile.id,
           });
           const newSavedUser = await newUser.save();
           return done(null, newSavedUser);
